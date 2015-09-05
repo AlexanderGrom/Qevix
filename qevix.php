@@ -1283,7 +1283,7 @@ class Qevix
 			{
 				if($paramAllowedValues == '#int')
 				{
-					if(!preg_match('#^[0-9]$#iu', $value)) {
+					if(!is_numeric($value)) {
 						$this->setError('Недопустимое значение "'.$value.'" для атрибута "'.$param.'" тега '.$tagName.'. Ожидалось число');
 						continue;
 					}
@@ -1291,7 +1291,7 @@ class Qevix
 				
 				if($paramAllowedValues == '#text')
 				{
-					// ничего не делаем
+					$value = htmlspecialchars($value);
 				}
 				
 				if($paramAllowedValues == '#link')
