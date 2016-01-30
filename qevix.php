@@ -1326,7 +1326,7 @@ class Qevix
 					$found = false;
 					foreach($paramAllowedValues['#link'] as $domain) {
 						$domain = preg_quote($domain);
-						if(preg_match('#^('.$protocols.')://'.$domain.'/?#iu', $value)) {
+						if(preg_match('#^(('.$protocols.'):)?//'.$domain.'/#iu', $value)) {
 							$found = true;
 							break;
 						}
